@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url(../img/LordOfTheRing.jpg);
+}
+
+.wrapper {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-perspective: 1000;
+}
+
+.card {
+	width: 200px;
+	height: 300px;
+	position: relative;
+	background: white;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	transition: 1s ease;
+}
+
+.front {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../img/ace.jpg);
+	background-size: contain;
+	transform: translateZ(0.1px);
+}
+
+
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../img/joker.jpg);
+	background-size: contain;
+	transform: translateZ(-0.1px);
+}
+
+/*a {
+	position: absolute;
+	bottom: -100px;
+	padding: 20px;
+	text-decoration: none;
+	background: white;
+}*/
+
+#card:hover {
+	transform: rotateY(-180deg);
+}
+
+
+
+
+

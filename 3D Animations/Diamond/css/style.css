@@ -1,0 +1,221 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url(../img/LordOfTheRing.jpg);
+}
+
+.wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	-webkit-perspective: 1500;
+	overflow: hidden;
+
+}
+
+
+.boxwrapper {
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	width: 300px;
+	height: 300px;
+	transform-style: preserve-3d;
+	animation: carousel 10s linear infinite;
+	transform: rotateX(1100deg) rotateY(158deg);
+}
+
+.boxwrapper2 {
+	animation: none;
+	transform: rotateX(160deg) translateY(-320px) translateX(-517px);
+}
+
+.box ,
+.box1 ,
+.box2 ,
+.box3 ,
+.box4 ,
+.box5 ,
+.box6 ,
+.box7 {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	transform-style: preserve-3d;
+	border-radius: 100%;
+}
+
+.box-middle {
+	position: absolute;
+	top: 0;
+	left: 66px;
+	right: 66px;
+	bottom: 0;
+	transform-style: preserve-3d; 
+	transition: all 1s ease;
+	transform: translateZ(-94px) translateY(-155px) rotateX(-45deg) rotateZ(180deg);
+	border-top: 108px solid rgba(255,255,255,.5);
+	border-right: 32.5px solid transparent;
+	border-left: 32.5px solid transparent;
+	opacity: 1;
+}
+
+.box-bottom {
+	position: absolute;
+	top: 0;
+	left: 66px;
+	right: 66px;
+	bottom: 0;
+	transform-style: preserve-3d; 
+	transition: all 1s ease;
+	transform: translateZ(-94px) translateY(56px) rotateX(45deg);
+	border-top: 284px solid rgba(255,255,255,.5);
+	border-right: 84px solid transparent;
+	border-left: 84px solid transparent;
+	opacity: 1;
+	z-index: 10;
+}
+
+.box-top {
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 5%;
+    transform: rotateY(90deg) rotateX(90deg) translateZ(37px) translateY(20px) ;
+    border-top: 125px solid rgba(255,255,255,.5);
+    border-right: 53px solid transparent;
+    border-left: 53px solid transparent;
+    opacity: 1;
+}
+
+.box-bottom2 {
+	border-top: 284px solid rgba(0,0,0,.4);
+	border-right: 600px solid transparent;
+	border-left: 600px solid transparent;
+	opacity: 1;
+}
+
+.splash {
+	position: absolute;
+	top: 10%;
+	left: 40%;
+	width: 150px;
+	height: 150px;
+	background: rgba(0,255,255,.1);
+	border-radius: 100%;
+	box-shadow: 0 0 400px rgb(0, 255, 255);
+}
+
+
+.glow:before,
+.glow-delay:before {
+	content: "";
+	width: 150px;
+	height: 2px;
+	position: absolute;
+	bottom: 299px;
+    left: -262px;
+	background: rgba(255,255,255,.3);
+	transform: translateX(154px) rotateX(135deg) rotateY(-22deg) rotateZ(45deg);
+	animation: glow 2s ease-in-out infinite alternate;
+}
+
+.glow:after,
+.glow-delay:after {
+	content: "";
+	width: 150px;
+	height: 2px;
+	position: absolute;
+	bottom: 299px;
+    left: -262px;
+    background: rgba(255,255,255,.3);
+	transform: rotateZ(90deg) translateY(-154px) rotateY(45deg) rotateX(22deg) rotateZ(-45deg);
+	animation: glow 2s ease-in-out infinite alternate;
+}
+
+.glow2:before ,
+.glow-delay2:before {
+	content: "";
+	width: 2px;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+    left: 0;
+	background: rgba(255,255,255,.3);
+	transform: rotateX(-45deg) rotateY(67deg) rotateZ(0deg) translateX(-37px) translateY(-134px) translateZ(-148px);
+	animation: glow 2s ease-in-out infinite alternate;
+}
+
+.glow2:after,
+.glow-delay2:after {
+	content: "";
+	width: 2px;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+    left: 0;
+	background: rgba(255,255,255,.3);
+	transform: rotateX(-45deg) rotateY(67deg) rotateZ(0deg) translateX(-37px) translateY(-141px) translateZ(-148px) rotateZ(90deg);
+	animation: glow 2s ease-in-out infinite alternate;
+}
+
+.glow-delay:before ,
+.glow-delay:after ,
+.glow-delay2:before ,
+.glow-delay2:after {
+	animation-delay: 1.5s;
+}
+
+
+.box1 {
+	transform: rotateY(45deg);
+}
+.box2 {
+	transform: rotateY(90deg);
+}
+.box3 {
+	transform: rotateY(135deg);
+}
+.box4 {
+	transform: rotateY(180deg);
+}
+.box5 {
+	transform: rotateY(225deg);
+}
+.box6 {
+	transform: rotateY(270deg);
+}
+.box7 {
+	transform: rotateY(315deg);
+}
+
+
+@keyframes carousel {
+	0% { transform: rotateY(100deg);}
+	100% { transform: rotateY(460deg); }
+}
+
+@keyframes glow {
+	0% { background: none;}
+	100% {background: rgba(255,255,255,.35);}
+	
+}
+
+
+
+
+
+
+
+

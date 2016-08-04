@@ -1,0 +1,117 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+	padding: 0;
+}
+body > * {
+	/*opacity: 0.7;*/
+}
+body {
+	background-image: url(../img/LordOfTheRing.jpg);
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0);
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	
+}
+
+.box {
+	display: flex;
+	width: 800px;
+	height: 500px;
+	position: relative;
+	left:0;
+	top: 0;
+	/*animation: 10s box 1 ;*/
+	/*z-index: 10;*/
+	-webkit-perspective: 700;
+	overflow: hidden;
+}
+
+.slika {
+	width: 800px;
+	height: 500px;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 50px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+
+}
+
+
+.slika1 {
+	animation: 15s slide1 ease infinite;
+	background: url(../img/nature1.gif) no-repeat;
+	background-size: cover;
+} 
+
+.slika2 {
+
+	animation: 15s slide2 ease infinite;
+	background: url(../img/nature2.jpg) no-repeat;
+	background-size: cover;
+
+}
+.slika3 {
+	animation: 15s slide3 ease infinite;
+	background: url(../img/nature3.gif) no-repeat;
+	background-size: cover;
+
+}
+.slika4 {
+	animation: 15s slide4 ease infinite;
+	background: url(../img/nature4.gif) no-repeat;
+	background-size: cover;
+
+}
+
+
+@keyframes slide4 {
+	
+	20% { opacity: 1; }
+	25% { opacity: 0; }
+	95% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes slide3 {
+
+	45% { opacity: 1; }
+	50% { opacity: 0; }
+	100% { opacity: 0; }
+
+}
+
+@keyframes slide2 {
+	
+	70% { opacity: 1; }
+	75% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+@keyframes slide1 {
+	
+	95% { opacity: 1;}
+	100% { opacity: 0; }
+	
+}

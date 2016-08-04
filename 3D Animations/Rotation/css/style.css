@@ -1,0 +1,268 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+	padding: 0;
+}
+body > * {
+	/*opacity: 0.7;*/
+}
+body {
+	background-image: url(../img/LordOfTheRing.jpg);
+}
+.wrapper {
+	display: flex;
+	background-color: rgba(255,255,255,0);
+	/*background-color: black;*/
+	position: relative;
+	margin-top: 200px;
+	width: 20%;
+	margin: 300px auto;
+	/*top: 300px;*/
+	/*z-index: 1;*/
+	/*width: 950px;*/
+	/*overflow: hidden;*/
+	
+}
+
+.box {
+	display: flex;
+	width: 1000px;
+	height: 500px;
+	position: relative;
+	left:0;
+	top: 0;
+	/*animation: 10s box 1 ;*/
+	/*z-index: 10;*/
+	-webkit-perspective: 700;
+	
+}
+
+.slika {
+	width: 400px;
+	height: 200px;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 50px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+
+}
+
+.slika11 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 50px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+	-webkit-backface-visibility: hidden;
+}
+
+.slika22 {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 50px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+	transform: rotateX(-180deg);
+	-webkit-backface-visibility: hidden;
+}
+
+.slika1 {
+	background: green;
+	animation: 8s slide1 ease 2 alternate;
+} 
+
+.slika2 {
+	background: yellow;
+	animation: 8s slide2 ease 2 alternate;
+
+}
+.slika3 {
+	background: blue;
+	animation: 8s slide3 ease 2 alternate;
+
+}
+.slika4 {
+	background: red;
+	animation: 8s slide4 ease 2 alternate;
+
+}
+
+
+@keyframes slide4 {
+	
+	0% {
+		
+		z-index: 4;
+		transform: translateX(0) rotateX(0deg); 
+	}
+	
+	25% {
+		z-index: 4;
+		transform: translate(200px,200px) rotateX(180deg); 
+	}
+	
+	50% {
+		z-index: 4;
+		transform: translate(400px,0px) rotateX(360deg);
+	}
+
+	51% {
+		
+		z-index: 0;
+	}
+
+	75% {
+		z-index: 0;
+		transform: translate(200px,-200px) rotateX(540deg); 
+	}
+
+	100% {
+		
+		z-index: 0;
+		transform: translate(0) rotateX(720deg); 
+	}
+}
+
+@keyframes slide3 {
+
+
+	0% {
+		z-index: 4;
+		transform: translate(200px,200px) rotateY(0deg); 
+	}
+	
+	25% {
+		z-index: 4;
+		transform: translate(400px,0px) rotateY(180deg); 
+	}
+
+	26% {
+		
+		z-index: 1;
+	}
+	
+	50% {
+		z-index: 1;
+		transform: translate(200px,-200px) rotateY(360deg); 
+	}
+	
+	74% {
+	
+		z-index: 1;
+	}
+
+	75% {
+		
+		z-index: 6;
+		transform: translate(0)  rotateY(540deg); 
+	}
+
+	100% {
+		z-index: 6;
+		transform: translate(200px,200px) rotateY(720deg); 
+	}
+}
+
+@keyframes slide2 {
+	
+	0% {
+		z-index: 4;
+		transform: translate(400px,0px) rotateZ(0); 
+	}
+
+	1% {
+		
+		z-index: 2;
+	}
+
+	
+	25% {
+		z-index: 2;
+		transform: translate(200px,-200px) rotateZ(180deg); 
+	}
+
+	49% {
+	
+		z-index: 2;
+	}
+	
+	50% {
+		
+		z-index: 5;
+		transform: translate(0) rotateZ(360deg); 
+	}
+
+
+	75% {
+		z-index: 5;
+		transform: translate(200px,200px) rotateZ(540deg); 
+	}
+
+	100% {
+		z-index: 5;
+		transform: translate(400px,0px) rotateZ(720deg); 
+	}
+}
+
+@keyframes slide1 {
+	
+	0% {
+		z-index: 3;
+		transform: translate(200px,-200px) rotateX(0) rotateY(0) rotateZ(0); 
+	}
+
+	24% {
+
+		z-index: 3;
+	}
+
+	25% {
+		
+		z-index: 5;
+		transform: translate(0) rotateX(360deg) rotateY(180deg) rotateZ(180deg); 
+	}
+
+	50% {
+		z-index: 5;
+		transform: translate(200px,200px)  rotateX(0deg) rotateY(0deg) rotateZ(0deg) ; 
+	}
+
+	75% {
+		z-index: 5;
+		transform: translate(400px,0px) rotateX(360deg) rotateY(180deg) rotateZ(180deg); 
+	}
+
+	76% {
+		z-index: 0;
+	}
+
+	100% {
+		z-index: 0;
+		transform: translate(200px,-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+	}
+}

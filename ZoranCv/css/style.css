@@ -1,0 +1,872 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+	padding: 0;
+}
+
+html {
+    font: 'Open Sans',sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #545454;
+}
+
+/*@font-face {
+	font-family: cyberdyne;
+	src: url("cyberdyne/cyberdyne.ttf");
+
+}
+*/
+@font-face {
+	font-family: 'cyberdyne';
+	src: url('cyberdyne/cyberdyne.eot');
+	src: url('cyberdyne/cyberdyne.eot?#iefix') format('embedded-opentype'),
+		 url('cyberdyne/cyberdyne.woff') format('woff'),
+		 url('cyberdyne/cyberdyne.ttf') format('truetype'),
+		 url('cyberdyne/cyberdyne.svg#cyberdyne') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+
+.navBar {
+	position: fixed;
+	top: 10%;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	z-index: 5000;
+	width: 200px;
+	transform: translateX(-90%);
+	overflow: hidden;
+	transition: all .3s ease;
+	box-shadow: 0 0 10px #F19F29;
+	font-family: cyberdyne;
+}
+
+.navBar li {
+	display: flex;
+	overflow: hidden;
+}
+
+.navBar li a {
+	position: relative;
+	width: 100%;
+	padding: 10px 20px;
+	color: #F19F29;
+	background: rgba(255,255,255,.2);
+	text-decoration: none;
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	z-index: 1;
+	transition: all .3s ease;
+	text-transform: lowercase;
+	line-height: 20px;
+}
+
+.navBar li:first-child a {
+	padding-top: 20px;
+	overflow: hidden;
+}
+
+.navBar li:last-child a {
+	padding-bottom: 20px;
+}
+
+.first:before ,
+.second:before ,
+.third:before ,
+.fourth:before ,
+.fifth:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateZ(90deg);
+	width: 100%;
+	height: 0;
+	background: rgba(0,0,0,.6);
+	z-index: -1;
+	transition: all .3s linear;
+	overflow: hidden;
+}
+
+.navBar li a:hover {
+	color: #fff;
+} 
+
+.first:hover:before ,
+.second:hover:before ,
+.third:hover:before ,
+.fourth:hover:before ,
+.fifth:hover:before {
+	height: 800px;
+} 
+
+.navBar:hover {
+	transform: translateX(0);
+}
+
+
+.container {
+	width: 100%;
+	overflow: hidden;
+}
+
+.profileTop {
+	background-image: url(../img/bgLaptop1.jpg);
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+    color: #fff;
+    position: relative;
+}
+
+.frontMask {
+	position: absolute;
+	width: 50vw;
+	height: 100vh;
+	top: 0;
+	left: 50%;
+	background: rgba(0,0,0,.8);
+	z-index: 5;
+}
+
+.front {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	z-index: 10;
+}
+
+.profileCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+}
+
+.profilePicture {
+	background: url(../img/profilePicture.jpg) no-repeat center center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(7% , -95%);
+	border-radius: 100%;
+	opacity: .9;
+}
+
+.profileName {
+	position: absolute;
+   	top: 50%;
+    left: 50%;
+    transform: translate(-99.5% , -71%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: 100px;
+}
+
+.name {
+    color: rgba(255,255,255,.6);
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 80px;
+    font-family: cyberdyne;
+    text-transform: uppercase;
+ /*   position: absolute;
+   	top: 50%;
+	left: 50%;*/
+     /*color: rgba(255,255,255,0.6);*/
+    /*text-shadow: 2px 2px 3px rgba(255,255,255,0.1);*/
+    /*text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);*/
+    /*text-shadow: 0px 0px 1px rgba(255,255,255,0.7);*/
+	/*text-shadow: 0px 4px 3px rgba(241,159,41,.4),
+            	 0px 8px 13px rgba(241,159,41,.1),
+             	0px 18px 23px rgba(241,159,41,.1);*/
+}
+
+.lastName {
+    color: rgba(255,255,255,.6);
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 80px;
+    font-family: cyberdyne;
+    text-transform: uppercase;
+    position: absolute;
+    top: 95%;
+    left: -1%;
+
+}
+
+.position {
+    color: #F19F29;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 19px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(5%, 344%);
+}
+
+.info {
+	position: absolute;
+	bottom: 3%;
+	left: 51%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	z-index: 100;
+}
+
+
+.email {
+    color: rgba(255,255,255,.6);
+  	letter-spacing: 1px;
+}
+
+.contact {
+ 	font-size: 14px;
+    color: rgba(255,255,255,.6);
+}
+
+.socialIcons {
+	display: flex;
+}
+
+.socialIcon {
+	padding: 5px 10px;
+	margin: 5px;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+    color: rgba(255,255,255,.3);
+    text-decoration: none;
+    transition: all .3s ease;
+    position: relative;
+	z-index: 2;
+	/*transition: transform 1s ease;*/
+}
+
+.socialIcon:hover {
+	color: #F19F29;
+	border-bottom: 1px solid #F19F29;
+	transform: rotateY(360deg);
+}
+
+.fb {
+	margin-left: 0;
+}
+
+.profileBottom {
+	width: 100vw;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.article {
+	flex: 1 1 50%;
+	padding: 80px 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.education {
+		order: 1;
+	    background: rgba(148,148,148,.1);
+	}
+
+.skills {
+		order: 0;
+	}
+
+.experience {
+		order: 2;
+        background: rgba(148,148,148,.1);
+	}
+
+.portfolio {
+		order: 3;
+	}
+
+.title {
+    margin: 0 0 25px;
+    font-size: 20px;
+    color: #141414;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    font-weight: 500;
+    border-bottom: 1px solid #141414;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.item {
+	font-family: sans-serif;
+	display: flex;
+	margin: 10px 10px 10px 0;
+}
+
+.left {
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid #dcdcdc;
+}
+
+.right {
+	display: flex:
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	padding: 20px;
+}
+
+.year {
+    color: #141414;
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.rightTitle {
+	font-weight: 600;
+	font-size: 13px;
+    color: #141414;
+    letter-spacing: 1px;
+}
+
+.rightText {
+    color: #8c8888;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.skills {
+	background: url(../img/bgTastatura.jpg) no-repeat center center;
+	background-size: cover;
+	position: relative;
+	opacity: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.title--skills {
+	color: #F19F29;
+	border-bottom: 1px solid  #F19F29;
+	z-index: 900;
+	margin-bottom: 70px;
+}
+
+.skillsMask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,.8);
+}
+
+.skillsItem {
+	width: 100px;
+	height: 100px;
+	background: transparent;
+	z-index: 10;
+	margin: 20px 20px 40px 20px;
+	position: relative;
+}
+
+.skillsItem1:before ,
+.skillsItem2:before {
+	content: "80%";
+	font-size: 20px;
+	color: #F19F29;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+}
+
+.skillsItem3:before {
+	content: "25%";
+	font-size: 20px;
+	color: #F19F29;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+}
+
+.skillsItem4:before {
+	content: "40%";
+	font-size: 20px;
+	color: #F19F29;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+}
+
+.skillsItem1:after {
+	content: "HTML";
+	font-size: 15px;
+	color: #F19F29;
+	position: absolute;
+	bottom: -40px;
+	letter-spacing: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.skillsItem2:after {
+	content: "CSS";
+	font-size: 15px;
+	color: #F19F29;
+	position: absolute;
+	bottom: -40px;
+	letter-spacing: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.skillsItem3:after {
+	content: "JAVASCRIPT";
+	font-size: 15px;
+	color: #F19F29;
+	position: absolute;
+	bottom: -40px;
+	letter-spacing: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.skillsItem4:after {
+	content: "PHOTOSHOP";
+	font-size: 15px;
+	color: #F19F29;
+	position: absolute;
+	bottom: -40px;
+	letter-spacing: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+.skillsItem img {
+	width: 100%;
+	background: transparent;
+}
+
+
+.skillsItems {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.portfolio {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap; 
+	align-items: center;
+	padding: 0;
+	opacity: 1;
+	position: relative;
+}
+
+.portfolioHover {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+	color: rgba(241,159,41,.6);
+	/*color: #F19F29;*/
+	letter-spacing: 10px;
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: 700;
+	z-index: 100;
+	opacity: 1;
+	transition: opacity .3s ease;
+	font:  'Open Sans',sans-serif;
+}
+
+.portfolio:hover .portfolioHover {
+	/*opacity: .9;*/
+}
+
+.portfolio:hover .portfolioMask {
+	background: rgba(0,0,0,.7);
+}
+
+.portfolio:hover .portfolioHover{
+	color: rgba(241,159,41,1);
+	 /*text-shadow: 0px 0px 6px rgba(0,0,0,0.7);*/
+}
+
+.portfolioItem {
+	flex: 1 1 50%;
+	height: 50vh;
+	border: 1px solid white;
+}
+
+.portfolioItem1 {
+	background: url(../img/cars.jpg) no-repeat center center;
+	background-size: cover;
+}
+.portfolioItem2 {
+	background: url(../img/fashion.jpg) no-repeat center center;
+	background-size: cover;
+}
+.portfolioItem3 {
+	background: url(../img/cv.jpg) no-repeat center center;
+	background-size: cover;
+}
+.portfolioItem4 {
+	background: url(../img/magazine.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.portfolioMask {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.8);
+	transition: all .3s ease;
+
+}
+
+.toggleButton {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	z-index: 1000;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	display: none;
+}
+
+.line {
+	width: 30px;
+	height: 2px;
+	background: rgba(241,159,41,1);
+	margin: 4px 0;
+	transition: transform .3s ease;
+}
+
+
+.toggleMenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-height: 60px;
+	background: rgba(0,0,0,.6);
+	box-shadow: 0 0 10px rgba(241,159,41,.3);
+	/*background: rgba(255,255,255,.2);*/
+	/*background: rgba(241,159,41,1);*/
+	z-index: 999;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 60px 10px 0;
+	transition: all 1s ease;
+	display: none;
+}
+
+.toggleMenu li {
+	list-style: none;
+	padding: 5px;
+}
+
+.toggleMenu li a {
+	text-decoration: none;
+	margin: 0 10px;
+	padding-bottom: 3px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: 20px;
+    font-weight: 600;
+    color: rgba(241,159,41,.6);
+    position: relative;
+    font: 600 13px/20px 'Open Sans',sans-serif;
+    transition: all .3s ease-out;
+}
+
+.toggleMenu li a:hover {
+	color: #F19F29;
+}
+
+.toggleMenu li a:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	width: 0;
+	background: #F19F29;
+	transition: all .3s ease-out;
+}
+
+.toggleMenu li a:hover:before {
+	width: 100%;
+} 
+
+.backToTop {
+	position: absolute;
+	top: 0;
+	z-index: -9999;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1100px) {
+
+	.profileBottom {
+		flex-direction: column;
+	}
+
+	.education {
+		order: 0;
+	}
+
+	.skills {
+		order: 1;
+	}
+
+	.experience {
+		order: 2;
+	}
+
+	.portfolio {
+		order: 3;
+	}
+
+	.profileName {
+		font-size: 
+	}
+
+	.position {
+	    font-size: 18px;
+	    transform: translate(2%, 203%);
+	    padding-right: 30px;
+	}
+
+	.profileName {
+		font-size: 60px;
+		transform: translate(-99.5% , -62%);
+	}
+
+	.profilePicture {
+		transform: translate(2% , -97%);
+	}
+
+	.lastName {
+		top: 56%;
+	}
+
+}
+
+@media screen and (max-width: 720px) {
+
+	.left {
+		width: 121px;
+	}
+
+	.article {
+	    padding: 60px 20px;
+	}
+
+	.position {
+		width: 33%;
+	    font-size: 18px;
+	    transform: translate(2%, 167%);
+	    line-height: 18px;
+	}
+
+	.profilePicture {
+		width: 200px;
+		height: 200px;
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+
+	.profilePicture {
+	    position: static;
+	    transform: translate(0,0);
+	}
+
+	.profileName {
+	    position: static;
+	    transform: translate(0,0);
+	    padding: 13px 13px 10px 13px;
+        display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	}
+
+	.front {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50% , -56%);
+	    display: flex;
+	    width: 100vw;
+	    height: 100vh;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    margin-bottom: 0;
+	}
+
+	.name ,
+	.lastName {
+		line-height: .8;
+	}
+
+	.lastName {
+	    position: static;
+	}
+
+	.position {
+	    position: static;
+	    transform: translate(0,0);
+	    text-align: center;
+  	 	 width: auto;
+  	 	 padding: 0;
+	}
+
+	.positionName {
+		text-align: center;
+	}
+
+	.profileTop {
+		align-items: center;
+	}
+
+	.info {
+	    left: 50%;
+	    transform: translateX(-50%);
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	.profileName {
+	    font-size: 50px;
+	}
+
+	.position {
+		font-size: 17px;
+	}
+
+	.navBar {
+		display: none;
+	}
+	
+	.toggleMenu ,
+	.toggleButton {
+		display: flex;
+	}
+	
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.item {
+	    flex-direction: column;
+	}
+
+	.left {
+	    justify-content: flex-start;
+	    padding-left: 20px;
+	    border: 0;
+	}
+}
+
+@media screen and (max-width: 450px) {
+
+	.skillsItems {
+	    flex-direction: column;
+	}
+
+	/*.skillsItem {
+		margin-bottom: 40px;
+	}*/
+
+	.profileName {
+	    font-size: 40px;
+	    padding-bottom: 5px;
+	}
+
+	.position {
+		font-size: 15px;
+	}
+
+}
+
+@media screen and (max-width: 375px) {
+
+	.profileName {
+	    font-size: 30px;
+	    padding-bottom: 3px;
+	}
+
+	.position {
+		font-size: 13px;
+	}
+
+} 
+
+
+
+
+
+
+
+
